@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import "~normalize.css/normalize.css";
+@import "~system-font-css/system-font.css";
+@import "~rfs/scss/rfs";
+
+html {
+  font-family: system-ui;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+body {
+  font-size: 1rem;
+  background: rgb(255, 255, 255);
+  color: rgb(50, 47, 56);
+}
+
+progress {
+  appearance: none;
+  display: block;
+  border: 0;
+}
