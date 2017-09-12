@@ -108,3 +108,6 @@ build/
 lib/
 dist/
 !src/js/lib
+release/
+*.zip
+*.tar.gz
