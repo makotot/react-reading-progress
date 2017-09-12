@@ -78,7 +78,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div id="root">
         <StyledReadingProgress targetEl={ '#js-article' } />
         <Header />
         <Install>npm install react-reading-progress</Install>
