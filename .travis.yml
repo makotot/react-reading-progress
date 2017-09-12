@@ -11,10 +11,10 @@ node_js:
 - '6'
 - '7'
 - '8'
-script: npm run test
+script: yarn run test
 after_success:
-- test ${TRAVIS_TAG} && npm run build
-- npm run docs && ./docs.sh
+- test ${TRAVIS_TAG} && yarn run build
+- yarn run docs && ./docs.sh
 cache:
   directories:
     - node_modules

@@ -1,6 +1,6 @@
 {
   "name": "react-reading-progress",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./lib/index.js",
   "author": "makotot",
   "description": "react reading progress bar component",
@@ -14,10 +14,10 @@
   ],
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --inline --hot --color",
-    "build": "NODE_ENV=production ./node_modules/.bin/babel ./src/js/lib/*.js --out-dir ./lib",
+    "build": "NODE_ENV=production ./node_modules/.bin/babel ./src/js/lib --out-dir ./lib",
     "docs": "NODE_ENV=production webpack",
     "test": "NODE_ENV=test ava __test__/*.js --verbose",
-    "prepublish": "npm run build"
+    "prepublish": "yarn run build"
   },
   "browserlist": "last 3 versions",
   "ava": {
