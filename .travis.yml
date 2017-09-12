@@ -19,14 +19,14 @@ cache:
   directories:
     - node_modules
 before_deploy:
-  - ./release.sh
+  - './release.sh'
 deploy:
   provider: releases
   api_key:
     secure: j0K3gNFlDf9XypAculOOOLqVk4XlhyD/lCEQ4kR+DnARiyKBGv4OKen7LqsSwidi/GFhZc0wcJH1QzamBQoqs16YbQAbBsVIJ0u5wUuAgNQqSoWyInFvjYnA7nqhhSnSFvF5vav+nQVU6OUkItkJm578dYoiT6iUhZJ6UsLa/9OJkyHKTkqTInIKaKhSFQuuyI81I0hQd1Ph3OPztBJVr2+uL0m3ZDagvEYtJruJ5LVpJg3BSI38uXxmyt43BXQ5EOTVy84jwITTmOH05OpfP8u1PccEMxTB52NsSqa/VmLLf4U3OliIVFXdfUQT2TQkGYA+8zwulEv1/9zPS8wsE4USD7mTBjOo0IJrDgMFQmKN8Yt1eaG0/QE3bbKC4JmYLVBMig/SX7eI4SD3DXWsZtYztcIXczycZ5iI1aVb5DqEP/52CL7doYalnfl0Ay3m4qj+lctSA3y7RLy4oVeJld1S9T6aYrI5DGIwHmVZQ1r3Z8fGPmrHWQqrZNNEV/Gv2gELwUufbPHdWppNFBiRnJmLaZZh3PLnKWKv9Cya5/sUJRIjzpFfahpMHZQ5F1T+Ib28jAB+wsG2AFeuYVsdQoSwcCxrrEbQMflUgUhjPOkOa0OwDJ114kAHQGk/HyjCiGPbsF6LNyy5J+NOp1FMqk/FI1nY4vwJdL0RoH22Wss=
   file:
-    - react-reading-progress.tar.gz
-    - react-reading-progress.zip
+    - 'react-reading-progress.tar.gz'
+    - 'react-reading-progress.zip'
   on:
     repo: makotot/react-reading-progress
     tags: true
