@@ -1,11 +1,23 @@
 {
   "name": "react-reading-progress",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
   "author": "makotot",
+  "description": "react reading progress bar component",
+  "files": [
+    "README.md",
+    "lib/index.js",
+    "lib/throttle.js",
+    "package.json",
+    "webpack.config.babel.js",
+    ".eslintrc"
+  ],
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --inline --hot --color",
-    "build": "NODE_ENV=production babel ./src/js/lib --out-dir ./lib"
+    "build": "NODE_ENV=production ./node_modules/.bin/babel ./src/js/lib/*.js --out-dir ./lib",
+    "docs": "NODE_ENV=production webpack",
+    "test": "NODE_ENV=test ava __test__/*.js --verbose",
+    "prepublish": "npm run build"
   },
   "browserlist": "last 3 versions",
   "ava": {
@@ -16,9 +28,13 @@
       "babelrc": true
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makotot/react-reading-progress.git"
+  },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^7.1.4",
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -30,7 +46,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
-    "construct-css": "https://github.com/makotot/construct.git",
+    "browser-env": "^3.2.0",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "enzyme": "^2.9.1",
@@ -50,16 +66,23 @@
     "style-loader": "^0.18.2",
     "styled-components": "^2.1.2",
     "system-font-css": "^2.0.1",
-    "webpack": "^3.5.5",
+    "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1"
   },
   "peerDependencies": {
-    "react": ">=0.14.0",
-    "react-dom": ">=0.14.0"
+    "react": ">=0.15.0",
+    "react-dom": ">=0.15.0"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "progress",
+    "reading"
+  ]
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import GoMarkGithub from 'react-icons/lib/go/mark-github'
-import ReadingProgress from './lib/reading-progress'
+import ReadingProgress from './lib'
 import Header from './header'
 import packageJSON from '../../package.json'
 
@@ -42,6 +42,10 @@ const StyledReadingProgress = styled(ReadingProgress)`
   &::-webkit-progress-value {
     background: rgb(97, 13, 255);
   }
+
+  &::-moz-progress-bar {
+    background-color: rgb(97, 13, 255);
+  }
 `
 
 const Footer = styled.footer`
@@ -53,14 +57,13 @@ const Footer = styled.footer`
 `
 
 const GithubLink = styled.a`
-  // position: sticky;
-  // top: 158px;
   display: block;
   padding: 1rem 2rem;
   background: rgb(23, 40, 41);
   color: rgb(255, 255, 255);
   font-weight: 700;
   text-decoration: none;
+  transition: background 0.3s linear;
 
   &:hover {
     background: rgb(28, 27, 31);

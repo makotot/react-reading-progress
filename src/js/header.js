@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
 const Title = styled.h1`
   margin: 0;
   padding: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
 `
 

@@ -106,3 +106,5 @@ build/
 .rvmrc
 
 lib/
+dist/
+!src/js/lib

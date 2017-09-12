@@ -1,0 +1,33 @@
+language: node_js
+env:
+  global:
+  - GH_REPO="makotot/react-reading-progress"
+  - GIT_COMMITTER_NAME=makotot
+  - GIT_COMMITTER_EMAIL=makoto.ttn@gmail.com
+  - GIT_AUTHOR_NAME=makotot
+  - GIT_AUTHOR_EMAIL=makoto.ttn@gmail.com
+  - secure: MZFbO2Zbh5rW7yv5fTdofmxBxbzd5RH7jDOzWQZqQAA56YVgGS/uLeHRYIDeLCvl4xmG8Pqnyuqo4/uvXttE6KYeBsg88Uzip/jbEJw2tPbrnToXA4T1xdzrSTnN4Q4ahw7Un4eUdFYh8l9PXKv0V1NfopLNQKjXWOwAWj2XCrVDT5zq1BFBBxEEADPa5d0NjVLwRNA5DIowfL0SoJWcWiQDYPW0YF81Jrt2Stq5Ogdhpbq+Egi7vDhqoGGkijdMEP895gJDbXzMhiu3QG4Or0iUX2bwrAAY+/he9xF4Q46C3eSGMOcT7KBtDdJSGORDT3/KK3ZzwY4zf8RKPTWB2Q31x6E0mW6Zx5AukrYWakOot4/tqNE8S0JLMsMAYQcefPANcz5U9gce+4fGISuLgOtyA3qx0Gcy/zNz1nPrmJka03VMMw/5Mf71wJQkXwDUSYVBnAQXu2YDz3oZnAyB5WF1Xpxo1kEOeYa7ykLntT2KXuOVIHRZQQsCY2Jt1MzwdgoLey2F8KvRJv+4A96j9gSk66V/w2mOP+Ty5fR5HnwHWNBR7uZhjsPje9PHpqt20d6PA9AUsQEAhSdSZPvhdQys9lV1WT91z2TwQivItB8MOf9l7Ozf8Esk5GPVVe3edJAKT0SXyXqsYNNbYxpKfxhM3CV/wQcj9vd2W8AEbRM=
+node_js:
+- '6'
+- '7'
+- '8'
+script: npm run test
+after_success:
+- test ${TRAVIS_TAG} && npm run build
+- npm run docs && ./docs.sh
+cache:
+  directories:
+    - node_modules
+before_deploy:
+  - ./release.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: j0K3gNFlDf9XypAculOOOLqVk4XlhyD/lCEQ4kR+DnARiyKBGv4OKen7LqsSwidi/GFhZc0wcJH1QzamBQoqs16YbQAbBsVIJ0u5wUuAgNQqSoWyInFvjYnA7nqhhSnSFvF5vav+nQVU6OUkItkJm578dYoiT6iUhZJ6UsLa/9OJkyHKTkqTInIKaKhSFQuuyI81I0hQd1Ph3OPztBJVr2+uL0m3ZDagvEYtJruJ5LVpJg3BSI38uXxmyt43BXQ5EOTVy84jwITTmOH05OpfP8u1PccEMxTB52NsSqa/VmLLf4U3OliIVFXdfUQT2TQkGYA+8zwulEv1/9zPS8wsE4USD7mTBjOo0IJrDgMFQmKN8Yt1eaG0/QE3bbKC4JmYLVBMig/SX7eI4SD3DXWsZtYztcIXczycZ5iI1aVb5DqEP/52CL7doYalnfl0Ay3m4qj+lctSA3y7RLy4oVeJld1S9T6aYrI5DGIwHmVZQ1r3Z8fGPmrHWQqrZNNEV/Gv2gELwUufbPHdWppNFBiRnJmLaZZh3PLnKWKv9Cya5/sUJRIjzpFfahpMHZQ5F1T+Ib28jAB+wsG2AFeuYVsdQoSwcCxrrEbQMflUgUhjPOkOa0OwDJ114kAHQGk/HyjCiGPbsF6LNyy5J+NOp1FMqk/FI1nY4vwJdL0RoH22Wss=
+  file:
+    - react-reading-progress.tar.gz
+    - react-reading-progress.zip
+  on:
+    repo: makotot/react-reading-progress
+    tags: true
+    branch: master

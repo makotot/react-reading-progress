@@ -8,6 +8,10 @@ html {
   font-family: system-ui;
   font-size: 18px;
   line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 body {
