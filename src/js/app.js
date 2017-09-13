@@ -82,7 +82,7 @@ class App extends React.Component {
         <StyledReadingProgress targetEl={ '#js-article' } />
         <Header />
         <Install>npm install react-reading-progress</Install>
-        <GithubLink href="/">
+        <GithubLink href="https://github.com/makotot/react-reading-progress">
           <GoMarkGithub />&nbsp;<Version>v{ packageJSON.version }</Version>
         </GithubLink>
         <Main>
