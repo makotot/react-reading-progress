@@ -57,6 +57,8 @@
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-icons": "^2.2.5",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
