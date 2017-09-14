@@ -66,7 +66,7 @@
     "styled-components": "^2.1.2",
     "system-font-css": "^2.0.1",
     "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.8.1"
   },
   "peerDependencies": {
     "react": ">=0.15.0",
