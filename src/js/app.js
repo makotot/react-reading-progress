@@ -74,6 +74,11 @@ const Version = styled.span`
   color: rgb(97, 43, 255);
 `
 
+const Link = styled.a`
+  color: rgb(97, 43, 255);
+  font-weight: 700;
+`
+
 class App extends React.Component {
 
   render () {
@@ -86,6 +91,7 @@ class App extends React.Component {
           <GoMarkGithub />&nbsp;<Version>v{ packageJSON.version }</Version>
         </GithubLink>
         <Main>
+          <p><Link href="https://github.com/makotot/react-reading-progress">react-reading-progress</Link> is progress bar component to indicate how long the article is.</p>
           <p>👇 Here is a demo article.</p>
           <Article id="js-article">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc. Ut sem viverra aliquet eget sit amet tellus. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. In mollis nunc sed id semper risus in hendrerit gravida. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Amet purus gravida quis blandit. Et ultrices neque ornare aenean euismod elementum nisi quis. Vitae aliquet nec ullamcorper sit amet. Aliquam vestibulum morbi blandit cursus risus at ultrices. Arcu felis bibendum ut tristique et. Non pulvinar neque laoreet suspendisse. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Curabitur vitae nunc sed velit dignissim sodales ut eu. Amet est placerat in egestas. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Mattis molestie a iaculis at erat pellentesque adipiscing.

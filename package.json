@@ -78,9 +78,10 @@
   },
   "keywords": [
     "react",
-    "react-component",
     "component",
     "progress",
-    "reading"
+    "reading",
+    "progressbar",
+    "scroll"
   ]
 }

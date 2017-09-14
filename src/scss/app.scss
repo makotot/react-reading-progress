@@ -2,11 +2,11 @@
 
 @import "~normalize.css/normalize.css";
 @import "~system-font-css/system-font.css";
-@import "~rfs/scss/rfs";
 
 html {
   font-family: system-ui;
   font-size: 18px;
+  font-weight: 400;
   line-height: 1.2;
 
   @media (max-width: 768px) {
