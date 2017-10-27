@@ -1,6 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import throttle from './throttle'
+import styled from 'styled-components'
+
+const Progress = ({ value, max, className }) => {
+  return (
+    <progress
+      value={ value }
+      max={ max }
+      className={ className }
+    />
+  )
+}
+
+const StyledProgress = styled(Progress)`
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100vw;
+  height: 0.4rem;
+  border: 0;
+  background-color: transparent;
+  color: rgb(97, 13, 255);
+  z-index: 1;
+
+  &::-webkit-progress-bar {
+    background: #FFF;
+  }
+
+  &::-webkit-progress-value {
+    background: rgb(97, 13, 255);
+  }
+
+  &::-moz-progress-bar {
+    background-color: rgb(97, 13, 255);
+  }
+
+  ${ props => props.style }
+`
 
 export default class ReadingProgress extends React.Component {
 
@@ -8,6 +45,7 @@ export default class ReadingProgress extends React.Component {
     return {
       targetEl: PropTypes.string,
       className: PropTypes.string,
+      style: PropTypes.object,
     }
   }
 
@@ -80,7 +118,12 @@ export default class ReadingProgress extends React.Component {
 
   render() {
     return (
-      <progress value={ this.state.value } max={ this.max } className={ this.props.className }></progress>
+      <StyledProgress
+        value={ this.state.value }
+        max={ this.max }
+        className={ this.props.className }
+        style={ this.props.style }
+      />
     )
   }
 }

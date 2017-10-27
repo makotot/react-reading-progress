@@ -27,25 +27,6 @@ const Article = styled.article`
 
 const StyledReadingProgress = styled(ReadingProgress)`
   position: sticky;
-  top: 0;
-  width: 100vw;
-  height: 0.4rem;
-  border: 0;
-  background-color: transparent;
-  color: rgb(97, 13, 255);
-  z-index: 1;
-
-  &::-webkit-progress-bar {
-    background: #FFF;
-  }
-
-  &::-webkit-progress-value {
-    background: rgb(97, 13, 255);
-  }
-
-  &::-moz-progress-bar {
-    background-color: rgb(97, 13, 255);
-  }
 `
 
 const Footer = styled.footer`
@@ -84,7 +65,9 @@ class App extends React.Component {
   render () {
     return (
       <div id="root">
-        <StyledReadingProgress targetEl={ '#js-article' } />
+        <StyledReadingProgress
+          targetEl={ '#js-article' }
+        />
         <Header />
         <Install>npm install react-reading-progress</Install>
         <GithubLink href="https://github.com/makotot/react-reading-progress">
