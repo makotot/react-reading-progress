@@ -9,7 +9,7 @@ browserEnv()
 test('renders expected HTML tag', (t) => {
   const component = shallow(
     <ReadingProgress targetEl="js-article" className="test-class" />
-  )
+  ).dive().dive()
 
   t.is(component.type(), 'progress')
   t.true(component.hasClass('test-class'))

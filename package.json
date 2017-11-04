@@ -46,6 +46,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
     "browser-env": "^3.2.0",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
@@ -63,7 +64,6 @@
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "styled-components": "^2.1.2",
     "system-font-css": "^2.0.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
@@ -74,7 +74,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "styled-components": "^2.2.2"
   },
   "keywords": [
     "react",
