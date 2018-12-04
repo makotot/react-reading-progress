@@ -94,7 +94,7 @@ export default class ReadingProgress extends React.Component {
   measure() {
     this.targetHeight = this.targetEl.getBoundingClientRect().height
     this.viewportH = this.measureViewportHeight()
-    this.max = this.targetHeight - this.viewportH + this.targetEl.offsetTop
+    this.max = this.targetHeight - this.viewportH
   }
 
   handleResize = () => {
@@ -106,10 +106,18 @@ export default class ReadingProgress extends React.Component {
   }
 
   update = () => {
-    const value = !this.props.rootEl ?
+    let value = !this.props.rootEl ?
       window.pageYOffset || document.documentElement.scrollTop
       :
       this.rootEl.scrollTop
+
+    if (this.props.targetEl) {
+      if (0 <= this.targetEl.getBoundingClientRect().top) {
+        value = 0
+      } else {
+        value = value - (this.targetEl.getBoundingClientRect().top + window.pageYOffset)
+      }
+    }
 
     this.setState({
       value,
