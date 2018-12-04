@@ -114,7 +114,7 @@ export default class ReadingProgress extends React.Component {
       this.rootEl.scrollTop
 
     if (this.props.targetEl) {
-      if (0 <= this.targetEl.getBoundingClientRect().top) {
+      if (this.targetEl.getBoundingClientRect().top >= 0) {
         value = 0
       } else {
         value = value - (this.targetEl.getBoundingClientRect().top + window.pageYOffset)
