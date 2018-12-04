@@ -92,7 +92,9 @@ export default class ReadingProgress extends React.Component {
   }
 
   measure() {
-    this.targetHeight = this.targetEl.getBoundingClientRect().height
+    if (this.targetEl) {
+      this.targetHeight = this.targetEl.getBoundingClientRect().height
+    }
     this.viewportH = this.measureViewportHeight()
     this.max = this.targetHeight - this.viewportH
   }

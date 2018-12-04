@@ -53,6 +53,7 @@
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.7",
     "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^5.9.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
