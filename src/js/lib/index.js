@@ -46,6 +46,7 @@ export default class ReadingProgress extends React.Component {
       targetEl: PropTypes.string,
       className: PropTypes.string,
       style: PropTypes.object,
+      hideNoAndFullProgress: PropTypes.bool,
     }
   }
 
@@ -62,6 +63,8 @@ export default class ReadingProgress extends React.Component {
     this.max = 0
     this.viewportH = 0
     this.targetHeight = 0
+
+    this.hideProgress(0)
 
     this.state = {
       value: 0,
@@ -120,10 +123,22 @@ export default class ReadingProgress extends React.Component {
         value = value - (this.targetEl.getBoundingClientRect().top + window.pageYOffset)
       }
     }
+    this.hideProgress(value)
 
     this.setState({
       value,
     })
+  }
+
+  hideProgress = (value) => {
+    console.log(this.props.hideNoAndFullProgress)
+    if (this.props.hideNoAndFullProgress) {
+      if (value <= 0 || value >= this.max) {
+        this.props.style.display = 'none'
+      } else {
+        this.props.style.display = ''
+      }
+    }
   }
 
   render() {
