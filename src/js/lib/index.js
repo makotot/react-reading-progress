@@ -46,6 +46,7 @@ export default class ReadingProgress extends React.Component {
       targetEl: PropTypes.string,
       className: PropTypes.string,
       style: PropTypes.object,
+      hideNoAndFullProgress: PropTypes.bool,
     }
   }
 
@@ -62,6 +63,8 @@ export default class ReadingProgress extends React.Component {
     this.max = 0
     this.viewportH = 0
     this.targetHeight = 0
+
+    this.hideProgress(0)
 
     this.state = {
       value: 0,
@@ -92,9 +95,11 @@ export default class ReadingProgress extends React.Component {
   }
 
   measure() {
-    this.targetHeight = this.targetEl.getBoundingClientRect().height
+    if (this.targetEl) {
+      this.targetHeight = this.targetEl.getBoundingClientRect().height
+    }
     this.viewportH = this.measureViewportHeight()
-    this.max = this.targetHeight - this.viewportH + this.targetEl.offsetTop
+    this.max = this.targetHeight - this.viewportH
   }
 
   handleResize = () => {
@@ -106,14 +111,33 @@ export default class ReadingProgress extends React.Component {
   }
 
   update = () => {
-    const value = !this.props.rootEl ?
+    let value = !this.props.rootEl ?
       window.pageYOffset || document.documentElement.scrollTop
       :
       this.rootEl.scrollTop
 
+    if (this.props.targetEl) {
+      if (this.targetEl.getBoundingClientRect().top >= 0) {
+        value = 0
+      } else {
+        value = value - (this.targetEl.getBoundingClientRect().top + window.pageYOffset)
+      }
+    }
+    this.hideProgress(value)
+
     this.setState({
       value,
     })
+  }
+
+  hideProgress = (value) => {
+    if (this.props.hideNoAndFullProgress) {
+      if (value <= 0 || value >= this.max) {
+        this.props.style.display = 'none'
+      } else {
+        this.props.style.display = ''
+      }
+    }
   }
 
   render() {

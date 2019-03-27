@@ -40,6 +40,10 @@ Target article's selector. If this prop is not specified, `document.body` will b
 
 Root element selector. If this prop is not specified, `window` will be used.
 
+### `hideNoAndFullProgress={ Boolean }`
+
+If this is set to true, the progress bar will be hidden if 
+the progress is at 0 or max progress.
 
 ## License
 
