@@ -131,7 +131,6 @@ export default class ReadingProgress extends React.Component {
   }
 
   hideProgress = (value) => {
-    console.log(this.props.hideNoAndFullProgress)
     if (this.props.hideNoAndFullProgress) {
       if (value <= 0 || value >= this.max) {
         this.props.style.display = 'none'
