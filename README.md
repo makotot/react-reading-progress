@@ -1,3 +1,7 @@
+# DEPRECATED - no longer actively maintained.
+
+Please use [GhostUI](https://github.com/makotot/GhostUI) instead.
+
 # react-reading-progress
 
 [![npm version](https://img.shields.io/npm/v/react-reading-progress.svg?style=flat-square)](https://www.npmjs.com/package/react-reading-progress)
