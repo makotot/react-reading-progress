@@ -15,7 +15,8 @@ Session.vim
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -111,3 +112,7 @@ dist/
 release/
 *.zip
 *.tar.gz
+
+# Editor files
+*.sublime-*
+.idea/
